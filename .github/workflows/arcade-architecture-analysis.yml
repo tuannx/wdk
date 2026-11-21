@@ -1,0 +1,31 @@
+name: Arcade Architecture Analysis
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  analyze:
+    name: Arcade Architecture Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run arcade-agent architecture analysis
+        uses: arcade-agent/arcade-agent/actions/analyze@v0.4.2
+        with:
+          arcade-agent-version: "0.4.2"
+          source-path: "."
+          language: "typescript"
+          install-extras: "[languages]"
+          run-secondary-analyses: "false"
+          post-pr-comment: "true"
