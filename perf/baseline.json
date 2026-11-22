@@ -1,0 +1,52 @@
+{
+  "generatedAt": "2026-11-21",
+  "environment": {
+    "os": "Linux 7.0.0-44-generic",
+    "arch": "x64",
+    "node": "v24.22.1",
+    "cpus": "AMD EPYC 9D25 126-Core Processor"
+  },
+  "commit": "06c0402631b32e70a35a3b29d84ffeb39f497b9a",
+  "results": [
+    {
+      "name": "wdk.isValidSeed-phrase",
+      "scope": "src/wdk.js WDK.isValidSeed() — BIP-39 phrase validation via @tetherto/wdk-wallet",
+      "warmup": 500,
+      "iterations": 5000,
+      "medianMs": 0.0322,
+      "p95Ms": 0.06212,
+      "meanMs": 0.06247,
+      "opsPerSec": 31051
+    },
+    {
+      "name": "wdk.isValidSeed-raw-bytes",
+      "scope": "src/wdk.js WDK.isValidSeed() — Uint8Array length check (pure)",
+      "warmup": 2000,
+      "iterations": 20000,
+      "medianMs": 0.00012,
+      "p95Ms": 0.00026,
+      "meanMs": 0.00015,
+      "opsPerSec": 8411844
+    },
+    {
+      "name": "wdk.construct+registerWallet",
+      "scope": "src/wdk.js new WDK() + registerWallet() with fixture wallet manager",
+      "warmup": 500,
+      "iterations": 5000,
+      "medianMs": 0.03163,
+      "p95Ms": 0.05665,
+      "meanMs": 0.06215,
+      "opsPerSec": 31616
+    },
+    {
+      "name": "wdk.getAccount-decorate+middleware",
+      "scope": "src/wdk.js getAccount() — fresh account protocol decoration + 1 middleware",
+      "warmup": 500,
+      "iterations": 5000,
+      "medianMs": 0.0037,
+      "p95Ms": 0.05649,
+      "meanMs": 0.01999,
+      "opsPerSec": 270390
+    }
+  ]
+}
